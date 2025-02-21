@@ -30,7 +30,7 @@ CREATE TABLE products(
     type_id INT NOT NULL,
     FOREIGN KEY (type_id) REFERENCES product_types(id),
     filter_item_id INT NOT NULL,
-    FOREIGN KEY (filter_item_id) REFERENCES filter_items(id),
+    FOREIGN KEY (filter_item_id) REFERENCES product_filter_items(id),
     --
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP    
@@ -71,7 +71,7 @@ CREATE TABLE product_filters(
     updated_at TIMESTAMP    
 );
 
-CREATE TABLE product_filter_item(
+CREATE TABLE product_filter_items(
     id SERIAL PRIMARY KEY,
     --
     title TEXT NOT NULL,
